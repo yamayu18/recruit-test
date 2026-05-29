@@ -6,15 +6,17 @@ function handleCtaClick() {
   // GA4などの計測を追加する場合は、この関数内にイベント送信処理を追記します。
 }
 
-function initializeFixedCta() {
-  const cta = document.getElementById("fixed-cta");
+function initializeCtaLinks() {
+  const ctaLinks = document.querySelectorAll(".js-cta-link");
 
-  if (!cta) {
+  if (!ctaLinks.length) {
     return;
   }
 
-  cta.href = CTA_URL;
-  cta.addEventListener("click", handleCtaClick);
+  ctaLinks.forEach((cta) => {
+    cta.href = CTA_URL;
+    cta.addEventListener("click", handleCtaClick);
+  });
 }
 
-document.addEventListener("DOMContentLoaded", initializeFixedCta);
+document.addEventListener("DOMContentLoaded", initializeCtaLinks);

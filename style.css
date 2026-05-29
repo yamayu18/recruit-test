@@ -34,6 +34,12 @@ body {
   overflow: hidden;
 }
 
+.lp-section {
+  position: relative;
+  margin: 0;
+  background: var(--lp-bg);
+}
+
 .lp-image {
   display: block;
   width: 100%;
@@ -41,6 +47,35 @@ body {
   margin: 0;
   background: var(--lp-bg);
   object-fit: contain;
+}
+
+.image-cta {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  border-radius: 999px;
+  text-indent: -9999px;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.image-cta--wide {
+  left: 10%;
+  top: 91.6%;
+  width: 80%;
+  height: 6.2%;
+}
+
+.image-cta--medium {
+  left: 14%;
+  top: 92%;
+  width: 72%;
+  height: 5.8%;
+}
+
+.image-cta:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.95);
+  outline-offset: -5px;
 }
 
 .fixed-cta-wrap {
