@@ -1,4 +1,4 @@
-const CTA_URL = "https://timerex.net/ここに実際のURLを入れる";
+const CTA_URL = "https://timerex.net/s/ihr.jimu_adf4/a38ae946";
 
 function handleCtaClick() {
   console.log("CTA clicked");
