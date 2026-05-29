@@ -1,0 +1,113 @@
+:root {
+  --lp-max-width: 430px;
+  --page-bg: #f3f3f3;
+  --lp-bg: #fffaf6;
+  --cta-bg: #d93670;
+  --cta-bg-hover: #c72b63;
+  --cta-shadow: 0 8px 20px rgba(120, 22, 58, 0.24);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--page-bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--page-bg);
+  color: #17233c;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+
+.lp-container {
+  width: 100%;
+  max-width: var(--lp-max-width);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-bottom: calc(88px + var(--safe-bottom));
+  background: var(--lp-bg);
+  overflow: hidden;
+}
+
+.lp-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  background: var(--lp-bg);
+  object-fit: contain;
+}
+
+.fixed-cta-wrap {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding: 10px 16px calc(10px + var(--safe-bottom));
+  pointer-events: none;
+}
+
+.fixed-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, calc(var(--lp-max-width) - 32px));
+  min-height: 54px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  background: var(--cta-bg);
+  box-shadow: var(--cta-shadow);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fixed-cta:hover,
+.fixed-cta:focus-visible {
+  background: var(--cta-bg-hover);
+}
+
+.fixed-cta:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+
+@media (min-width: 431px) {
+  body {
+    padding: 24px 0;
+  }
+
+  .lp-container {
+    box-shadow: 0 14px 40px rgba(20, 24, 36, 0.12);
+  }
+
+  .fixed-cta-wrap {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  html,
+  body {
+    background: var(--lp-bg);
+  }
+
+  .fixed-cta {
+    width: calc(100% - 24px);
+  }
+}
